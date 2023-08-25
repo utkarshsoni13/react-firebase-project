@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import landscapebg from "./landscapebg.jpg";
 import '../App.css'
 function Home() {

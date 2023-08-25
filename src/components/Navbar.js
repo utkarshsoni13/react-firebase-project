@@ -1,17 +1,9 @@
 import React, { useState } from "react";
-import { NavDropdown } from "react-bootstrap";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Switch,
-  Link,
-} from "react-router-dom";
 
 import {
   NavbarContainer,
   LeftContainer,
-  RightContainer,
+  RightContainer, 
   NavbarExtendedContainer,
   NavbarInnerContainer,
   NavbarLinkContainer,
@@ -22,11 +14,8 @@ import {
   Dropdown,
 } from "../styles/Navbar.style";
 import {
-  getAuth,
-  createUserWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
-  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../firebase";
 import "bootstrap/dist/css/bootstrap.min.css";

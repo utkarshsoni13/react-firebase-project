@@ -1,21 +1,12 @@
 import React from "react";
 import {
   collection,
-  getDocs,
   addDoc,
-  deleteDoc,
-  doc,
 } from "firebase/firestore";
 import "../App.css";
 import fillform from "./fillform.png";
-import { sighInWithGoogle, db } from "../firebase";
-import { useState, useEffect } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Form";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
-import { ModalBody } from "react-bootstrap";
+import {  db } from "../firebase";
+import { useState} from "react";
 function AddMember() {
   const usersCollectionRef = collection(db, "Members");
   const createUser = async () => {

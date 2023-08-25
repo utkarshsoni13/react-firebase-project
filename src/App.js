@@ -1,22 +1,17 @@
 import "./App.css";
-import { sighInWithGoogle, db } from "./firebase";
+import { db } from "./firebase";
 import { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
 } from "react-router-dom";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 import {
   collection,
   getDocs,
   addDoc,
-  deleteDoc,
-  doc,
 } from "firebase/firestore";
 import Navbar from "./components/Navbar";
-import { deleteUser, getIdToken } from "firebase/auth";
 import Members from "./components/Members";
 import SignIn from "./components/SignIn";
 import AddMember from "./components/AddMember"
@@ -38,7 +33,6 @@ function App() {
 
   const [newName, setNewName] = useState("");
   const [newAge, setNewAge] = useState(0);
-  const [newProfileUrl, setNewProfileUrl] = useState("");
   const createUser = async () => {
     await addDoc(usersCollectionRef, { Name: newName, Age: Number(newAge) });
   };
@@ -49,7 +43,6 @@ function App() {
   //   await addDoc(usersCollectionRef, {Name:newName, Pic:newProfileUrl});
   // }
   const usersCollectionRef = collection(db, "Members");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
     const getUsers = async () => {
       const data = await getDocs(usersCollectionRef);

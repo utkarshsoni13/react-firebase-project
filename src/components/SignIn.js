@@ -2,20 +2,13 @@ import React from "react";
 import { useState } from "react";
 import { sighInWithGoogle } from "../firebase";
 import {
-  getAuth,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
-  signOut,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../firebase";
-import Form from "react-bootstrap/Form";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Tab from '@material-ui/core/Tab';
 import { Box } from "@mui/material";
-// import { TabContext } from '@mui/lab';
-// import { TabList } from '@mui/lab';
-// import { TabPanel } from '@mui/lab';
 import TabContext from '@material-ui/lab/TabContext';
 import TabList from '@material-ui/lab/TabList';
 import TabPanel from '@material-ui/lab/TabPanel';
